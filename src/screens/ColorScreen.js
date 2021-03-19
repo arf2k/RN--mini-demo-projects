@@ -15,16 +15,21 @@ const ColorScreen = () => {
   return (
     <View>
       <Text>ColorScreen</Text>
-      <Button title="Add a Color" onPress={() => {
-           setColors([...colors, randomRgb()])
-      }} />
+      <Button
+        title="Add a Color"
+        onPress={() => {
+          setColors([...colors, randomRgb()]);
+        }}
+      />
       <View style={{ height: 100, width: 100, backgroundColor: randomRgb() }} />
-      <FlatList 
-      data={colors}
-      keyExtractor={item => item}
-      renderItem={({item}) => {
-       return   <View style={{ height: 100, width: 100, backgroundColor: item }} />
-      }}
+      <FlatList
+        data={colors}
+        keyExtractor={(item) => item}
+        renderItem={({ item }) => {
+          return (
+            <View style={{ height: 100, width: 100, backgroundColor: item }} />
+          );
+        }}
       />
     </View>
   );
